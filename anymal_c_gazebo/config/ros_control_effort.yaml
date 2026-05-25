@@ -15,18 +15,18 @@ joint_group_effort_controller:
   ros__parameters:
     use_sim_time: True
     joints:
-        - LF_HAA
-        - LF_HFE
-        - LF_KFE
-        - LH_HAA
-        - LH_HFE
-        - LH_KFE
-        - RF_HAA
-        - RF_HFE
-        - RF_KFE
-        - RH_HAA
-        - RH_HFE
-        - RH_KFE
+        - LF_HAA_joint
+        - LF_HFE_joint
+        - LF_KFE_joint
+        - LH_HAA_joint
+        - LH_HFE_joint
+        - LH_KFE_joint
+        - RF_HAA_joint
+        - RF_HFE_joint
+        - RF_KFE_joint
+        - RH_HAA_joint
+        - RH_HFE_joint
+        - RH_KFE_joint
     command_interfaces:
       - effort
     state_interfaces:
@@ -34,18 +34,18 @@ joint_group_effort_controller:
       - velocity
     
     gains:
-      LF_HAA  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      LF_HFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      LF_KFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      LH_HAA  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      LH_HFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      LH_KFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RF_HAA  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RF_HFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RF_KFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RH_HAA  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RH_HFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
-      RH_KFE  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LF_HAA_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LF_HFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LF_KFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LH_HAA_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LH_HFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      LH_KFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RF_HAA_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RF_HFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RF_KFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RH_HAA_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RH_HFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
+      RH_KFE_joint  : {p: 100.0, i: 0.2, d: 1.0, i_clamp: 2.5}
       
       # {p: 67.5, d: 0.3, i: 0.1.0, i_clamp: 1.0.5}
     # action_monitor_rate: 1.00.0 # Defaults to 20
