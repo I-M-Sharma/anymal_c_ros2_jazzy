@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <!-- Ground-truth odometry is now provided by the gz-sim-odometry-publisher-system
+         world plugin (see default.sdf) and bridged via ros_gz_bridge.
+         The Gazebo Classic libgazebo_ros_p3d.so plugin is removed. -->
+
+    <xacro:macro name="lidar_macro" params="max_range samples">
+        <!-- type="gpu_lidar" is the Gazebo Harmonic equivalent of Classic "ray".
+             SDF 1.9: scan config goes directly under <lidar>, not <lidar><ray>.
+             ros_gz_bridge maps /gz/laser_X_Y → /laser_controller_X_Y/out. -->
+        <gazebo reference="base">
+            <sensor name="laser_${max_range}_${samples}" type="gpu_lidar">
+                <pose> 0 0 .2 0 0 0 </pose>
+                <visualize>false</visualize>
+                <update_rate>5</update_rate>
+                <topic>/gz/laser_${max_range}_${samples}</topic>
+                <frame_id>lidar_frame</frame_id>
+                <lidar>
+                    <scan>
+                        <horizontal>
+                            <samples>${samples}</samples>
+                            <min_angle>-3.14</min_angle>
+                            <max_angle>3.14</max_angle>
+                        </horizontal>
+                    </scan>
+                    <range>
+                        <min>0.45</min>
+                        <max>${max_range}</max>
+                    </range>
+                </lidar>
+            </sensor>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:lidar_macro max_range="5" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="10" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="15" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="20" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="7" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="13" samples="360"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="17" samples="360"></xacro:lidar_macro>
+
+
+    <xacro:lidar_macro max_range="5" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="10" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="15" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="20" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="7" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="13" samples="180"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="17" samples="180"></xacro:lidar_macro>
+
+
+    <xacro:lidar_macro max_range="5" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="10" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="15" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="20" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="7" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="13" samples="1600"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="17" samples="1600"></xacro:lidar_macro>
+
+
+    <xacro:lidar_macro max_range="5" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="10" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="15" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="20" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="7" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="13" samples="800"></xacro:lidar_macro>
+    <xacro:lidar_macro max_range="17" samples="800"></xacro:lidar_macro>
+
+
+
+
+</robot>
